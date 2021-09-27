@@ -27,8 +27,12 @@ public class Level1 extends World
     {
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,Door.class, HUD.class);
         Player player = new Player();
-        addObject(player,17,762);
+        addObject(player,43,760);
         Door door = new Door();
         addObject(door,1178,40);
+        Floor floor = new Floor();
+        addObject(floor, 600, 800);
+        Bomb bomb = new Bomb();
+        addObject(bomb, 56, 56);
     }
 }
