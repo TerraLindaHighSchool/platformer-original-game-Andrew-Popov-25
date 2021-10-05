@@ -14,6 +14,7 @@ public class Player extends Actor
     private int speed;
     private int walkSpeed;
     private int frame;
+    private int walkIndex = 0;
     private float yVelocity;
     private boolean isWalking;
     private boolean isJumpking;
@@ -27,6 +28,13 @@ public class Player extends Actor
     
     public Player(int speed, float jumpForce, float gravity, int maxHealth, int maxPowerUp, Class nextLevel, GreenfootSound music)
     {
+        this.speed = speed;
+        JUMP_FORCE = jumpForce;
+        GRAVITY = gravity;
+        NEXT_LEVEL = nextLevel;
+        MUSIC = music;
+        
+        STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[]
         {
             new GreenfootImage("walk0.png"),
@@ -45,7 +53,8 @@ public class Player extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        animator();
+        move(speed);
     }
     
     public void addedToWorld(World world) {}
@@ -53,7 +62,22 @@ public class Player extends Actor
     private void walk() {}
     private void jump() {}
     private void fall() {}
-    private void animator() {}
+    private void animator() 
+    {
+        if(frame % (15 - 2 * speed) == 0)
+        {
+            if(walkIndex < WALK_ANIMATION.length)
+            {
+                setImage(WALK_ANIMATION[walkIndex]);
+                walkIndex++;
+            }
+            else
+            {
+                walkIndex = 0;
+            }
+        }
+        frame++;
+    }
     private void onCollision() {}
     private void mirrorImages() {}
     private void gameOver() {}
