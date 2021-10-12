@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends World
 {
-    private final float GRAVITY = 0.0667f;
+    private final float GRAVITY = 0.667f;
     private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
     
     /**
@@ -34,7 +34,7 @@ public class Level1 extends World
     private void prepare()
     {
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,Door.class, HUD.class);
-        Player player = new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, MUSIC);
+        Player player = new Player(3, 15.6f, GRAVITY, 3, 3, Level2.class, MUSIC);
         addObject(player,43,760);
         Door door = new Door();
         addObject(door,1178,40);
@@ -45,7 +45,7 @@ public class Level1 extends World
         BrickWall brickWall = new BrickWall();
         addObject(brickWall,961,97);
         TrapDoor trapDoor = new TrapDoor(GRAVITY);
-        addObject(trapDoor,661,97);
+        addObject(trapDoor,975,100);
         SmBrickWall smBrickWall = new SmBrickWall();
         addObject(smBrickWall,1004,272);
         BrickWall brickWall2 = new BrickWall();
@@ -74,6 +74,14 @@ public class Level1 extends World
         addObject(powerup2,1012,180);
         Powerup powerup3 = new Powerup();
         addObject(powerup3,975,180);
+        removeObject(brickWall);
+        SmBrickWall smBrickWall4 = new SmBrickWall();
+        addObject(smBrickWall4,1140,100);
+        trapDoor.setLocation(1029,97);
+        removeObject(smBrickWall4);
+        BrickWall brickWall5 = new BrickWall();
+        addObject(brickWall5,1179,100);
+        removeObject(trapDoor);
     }
     
     private void spawn()
