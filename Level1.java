@@ -8,8 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends World
 {
-    private final float GRAVITY = 0.667f;
+    private final float GRAVITY = 0.0667f;
+    private final int SPEED = 3;
+    private final float JUMP_FORCE = 5.6f;
+    private final int MAX_HEALTH = 3;
+    private final int MAX_POWERUP = 3;
+    private final Class NEXT_LEVEL = Level2.class;
     private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
+
+    
     
     /**
      * Constructor for objects of class BrickWorld.
@@ -34,7 +41,7 @@ public class Level1 extends World
     private void prepare()
     {
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,Door.class, HUD.class);
-        Player player = new Player(3, 15.6f, GRAVITY, 3, 3, Level2.class, MUSIC);
+        Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
         Door door = new Door();
         addObject(door,1178,40);
@@ -67,7 +74,7 @@ public class Level1 extends World
         removeObject(bomb);
         addObject(bomb,698,765);
         Bomb bomb2 = new Bomb(GRAVITY);
-        addObject(bomb2,309,182);
+        addObject(bomb2,390,182);
         Powerup powerup = new Powerup();
         addObject(powerup,936,180);
         Powerup powerup2 = new Powerup();
@@ -82,6 +89,18 @@ public class Level1 extends World
         BrickWall brickWall5 = new BrickWall();
         addObject(brickWall5,1179,100);
         removeObject(trapDoor);
+        removeObject(brickWall5);
+        BrickWall brickWall6 = new BrickWall();
+        addObject(brickWall6,1195,99);
+        removeObject(powerup);
+        removeObject(powerup3);
+        Powerup powerup4 = new Powerup();
+        addObject(powerup4,1178,607);
+        Powerup powerup5 = new Powerup();
+        addObject(powerup5,308,187);
+        removeObject(powerup5);
+        Powerup powerup6 = new Powerup();
+        addObject(powerup6,305,189);
     }
     
     private void spawn()

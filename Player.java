@@ -25,6 +25,11 @@ public class Player extends Actor
     private final float GRAVITY;
     private final Class NEXT_LEVEL;
     private final GreenfootSound MUSIC;
+    private final GreenfootSound JUMP_SFX = new GreenfootSound("jump.wav");
+    private final GreenfootSound EXPL_SFX = new GreenfootSound("explosionSmall.wav");
+    private final GreenfootSound DOOR_SFX = new GreenfootSound("door_open.wav");
+
+
     
     public Player(int speed, float jumpForce, float gravity, int maxHealth, int maxPowerUp, Class nextLevel, GreenfootSound music)
     {
@@ -88,6 +93,10 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("right"))
         {
+            if(!MUSIC.isPlaying())
+            {
+                MUSIC.playLoop();
+            }
             if(isFacingLeft)
             {
                 mirrorImages();
@@ -121,6 +130,8 @@ public class Player extends Actor
         {
             yVelocity = JUMP_FORCE;
             isJumping = true;
+            JUMP_SFX.play();
+            
         }
         
         if(isJumping && yVelocity > 0.0)
@@ -172,6 +183,8 @@ public class Player extends Actor
             } catch (IllegalAccessException e) {
                 System.out.println("Cannot access class constructor");
             } 
+            MUSIC.stop();
+            DOOR_SFX.play();
             Greenfoot.setWorld(world);
         }
         if(isTouching(BrickWall.class) || isTouching(SmBrickWall.class))
@@ -181,6 +194,7 @@ public class Player extends Actor
         }
         if(isTouching(Obstacle.class) && !isOnGround())
         {
+            EXPL_SFX.play();
             removeTouching(Obstacle.class);
             getWorld().removeObject(health[healthCount - 1]);
             healthCount--;
@@ -197,6 +211,7 @@ public class Player extends Actor
     {
         if(healthCount == 0)
         {
+            MUSIC.stop();
             Greenfoot.setWorld(new Level1());
         }
     }
