@@ -47,25 +47,25 @@ public class Level3 extends World
         addObject(door,1178,40);
         Floor floor = new Floor();
         addObject(floor, 600, 800);
-        TrapDoor trapDoor = new TrapDoor(GRAVITY);
+        TrapDoor3 trapDoor = new TrapDoor3(GRAVITY);
         addObject(trapDoor,60,688);
-        SmBrickWall smBrickWall = new SmBrickWall();
+        SmBrickWall3 smBrickWall = new SmBrickWall3();
         addObject(smBrickWall,180,688);
-        BrickWall brickWall = new BrickWall();
+        BrickWall3 brickWall = new BrickWall3();
         addObject(brickWall,480,688);
-        SmBrickWall smBrickWall2 = new SmBrickWall();
+        SmBrickWall3 smBrickWall2 = new SmBrickWall3();
         addObject(smBrickWall2,779,688);
-        SmBrickWall smBrickWall3 = new SmBrickWall();
+        SmBrickWall3 smBrickWall3 = new SmBrickWall3();
         addObject(smBrickWall3,899,688);
-        SmBrickWall smBrickWall4 = new SmBrickWall();
+        SmBrickWall3 smBrickWall4 = new SmBrickWall3();
         addObject(smBrickWall4,1019,688);
-        SmBrickWall smBrickWall5 = new SmBrickWall();
+        SmBrickWall3 smBrickWall5 = new SmBrickWall3();
         addObject(smBrickWall5,588,569);
-        SmBrickWall smBrickWall6 = new SmBrickWall();
+        SmBrickWall3 smBrickWall6 = new SmBrickWall3();
         addObject(smBrickWall6,809,370);
-        SmBrickWall smBrickWall7 = new SmBrickWall();
-        addObject(smBrickWall7,534,155);
-        SmBrickWall smBrickWall8 = new SmBrickWall();
+        SmBrickWall3 smBrickWall7 = new SmBrickWall3();
+        addObject(smBrickWall7,534,165);
+        SmBrickWall3 smBrickWall8 = new SmBrickWall3();
         addObject(smBrickWall8,118,423);
         Powerup powerup = new Powerup();
         addObject(powerup,114,385);
@@ -73,7 +73,7 @@ public class Level3 extends World
         addObject(powerup2,76,385);
         Powerup powerup3 = new Powerup();
         addObject(powerup3,151,385);
-        SmBrickWall smBrickWall9 = new SmBrickWall();
+        SmBrickWall3 smBrickWall9 = new SmBrickWall3();
         addObject(smBrickWall9,1140,98);
         Bomb bomb = new Bomb(2);
         addObject(bomb,853,324);
@@ -81,6 +81,8 @@ public class Level3 extends World
         addObject(bomb2,237,641);
         Bomb bomb3 = new Bomb(2);
         addObject(bomb3,487,108);
+        SmBrickWall3 smBrickWall10 = new SmBrickWall3();
+        addObject(smBrickWall10,820,81);
     }
     
     private void spawn()

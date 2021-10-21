@@ -187,7 +187,7 @@ public class Player extends Actor
             DOOR_SFX.play();
             Greenfoot.setWorld(world);
         }
-        if(isTouching(BrickWall.class) || isTouching(SmBrickWall.class))
+        if(isTouching(Platform.class))
         {
             yVelocity = -1;
             fall();
