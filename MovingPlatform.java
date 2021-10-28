@@ -8,8 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MovingPlatform extends Platform
 {
-    private boolean MovingRight;
-    private boolean MovingDecided = false;
+    private boolean MovingRight = false;
+    
+    public MovingPlatform(boolean movingRight)
+    {
+        MovingRight = movingRight;
+    }
     
     /**
      * Act - do whatever the MovingPlatform wants to do. This method is called whenever
@@ -17,29 +21,14 @@ public class MovingPlatform extends Platform
      */
     public void act()
     {
-        prepareMovement();
         checkEdge();
         glide();
     }
     
-    private void prepareMovement()
-    {
-        if(MovingDecided = false)
-        {
-            if(Math.random() < 0.5)
-                MovingRight = true;
-            else
-                MovingRight = false;
-                
-            MovingDecided = true;
-        }
-    }
-    
     private void glide()
     {
-        if(MovingDecided = true)
         {
-            if(MovingRight = true)
+            if(MovingRight == true)
                 move(3);
             else
                 move(-3);
@@ -50,7 +39,7 @@ public class MovingPlatform extends Platform
     {
         if(isAtEdge())
         {
-            if(MovingRight = false)
+            if(MovingRight == true)
                 MovingRight = false;
             else
                 MovingRight = true;

@@ -47,9 +47,16 @@ public class Level5 extends World
         addObject(door,1178,40);
         Floor floor = new Floor();
         addObject(floor, 600, 800);
-        addObject(new SmBrickWall4(), 1140, 100);
-        MovingPlatform movingPlatform = new MovingPlatform();
+        MovingPlatform movingPlatform = new MovingPlatform(false);
         addObject(movingPlatform,562,639);
+        MovingPlatform movingPlatform2 = new MovingPlatform(true);
+        addObject(movingPlatform2,872,538);
+        MovingPlatform movingPlatform3 = new MovingPlatform(true);
+        addObject(movingPlatform3,231,409);
+        MovingPlatform movingPlatform4 = new MovingPlatform(true);
+        addObject(movingPlatform4,720,272);
+        MovingPlatform movingPlatform5 = new MovingPlatform(false);
+        addObject(movingPlatform5,364,125);
     }
     
     private void spawn()
