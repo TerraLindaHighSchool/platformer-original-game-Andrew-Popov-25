@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MovingPlatform extends Platform
 {
     private boolean MovingRight = false;
-    
+
     public MovingPlatform(boolean movingRight)
     {
         MovingRight = movingRight;
@@ -23,6 +23,8 @@ public class MovingPlatform extends Platform
     {
         checkEdge();
         glide();
+        glitch();
+        imageChanger();
     }
     
     private void glide()
@@ -44,5 +46,26 @@ public class MovingPlatform extends Platform
             else
                 MovingRight = true;
         }
+    }
+    
+    private void glitch()
+    {
+        if(this.getWorld().getClass() == Level7.class)
+        {
+            if(Math.random() < 0.005)
+            {
+                if(MovingRight == true)
+                    move(-Greenfoot.getRandomNumber(75));
+                else
+                    move(Greenfoot.getRandomNumber(75));
+            } 
+        }
+    }
+    
+    private void imageChanger()
+    {
+        GreenfootImage dementedVariant;
+        dementedVariant = new GreenfootImage("brick_demented2_quarter.png");
+        setImage(dementedVariant);
     }
 }
