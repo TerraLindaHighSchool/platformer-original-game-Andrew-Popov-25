@@ -18,7 +18,7 @@ public class Player extends Actor
     private float yVelocity;
     private boolean isWalking;
     private boolean isJumping;
-    private boolean isFacingLeft;
+    private boolean isFacingLeft = false;
     private final GreenfootImage[]WALK_ANIMATION;
     private final GreenfootImage STANDING_IMAGE;
     private final float JUMP_FORCE;
@@ -109,7 +109,7 @@ public class Player extends Actor
 
         if(Greenfoot.isKeyDown("left"))
         {
-            if(isFacingLeft)
+            if(!isFacingLeft)
             {
                 mirrorImages();
             }

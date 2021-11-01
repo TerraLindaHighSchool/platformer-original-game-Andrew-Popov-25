@@ -31,9 +31,9 @@ public class MovingPlatform extends Platform
     {
         {
             if(MovingRight == true)
-                move(3);
+                move(2);
             else
-                move(-3);
+                move(-2);
         }
     }
     
@@ -63,9 +63,12 @@ public class MovingPlatform extends Platform
     }
     
     private void imageChanger()
-    {
-        GreenfootImage dementedVariant;
-        dementedVariant = new GreenfootImage("brick_demented2_quarter.png");
-        setImage(dementedVariant);
+    {    
+        if(this.getWorld().getClass() == Level7.class)
+        {          
+            GreenfootImage dementedVariant;
+            dementedVariant = new GreenfootImage("brick_demented2_quarter.png");
+            setImage(dementedVariant);
+        }
     }
 }

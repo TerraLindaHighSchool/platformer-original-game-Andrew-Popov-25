@@ -14,7 +14,7 @@ public class Level4 extends World
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
     private final Class NEXT_LEVEL = Level5.class;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("Lava Sounds.mp3");
 
     
     
@@ -47,6 +47,20 @@ public class Level4 extends World
         addObject(door,1178,40);
         Floor floor = new Floor();
         addObject(floor, 600, 800);
+        SmBrickWall4 smBrickWall4 = new SmBrickWall4();
+        addObject(smBrickWall4,320,615);
+        SmBrickWall4 smBrickWall42 = new SmBrickWall4();
+        addObject(smBrickWall42,952,693);
+        SmBrickWall4 smBrickWall44 = new SmBrickWall4();
+        addObject(smBrickWall44,333,280);
+        SmBrickWall4 smBrickWall45 = new SmBrickWall4();
+        addObject(smBrickWall45,1061,336);
+        SmBrickWall4 smBrickWall46 = new SmBrickWall4();
+        addObject(smBrickWall46,713,171);
+        TrapDoor4 trapDoor4 = new TrapDoor4(GRAVITY);
+        addObject(trapDoor4,614,399);
+        SmBrickWall4 smBrickWall43 = new SmBrickWall4();
+        addObject(smBrickWall43,-2,431);
     }
     
     private void spawn()

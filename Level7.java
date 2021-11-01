@@ -14,7 +14,7 @@ public class Level7 extends World
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
     private final Class NEXT_LEVEL = WinSplash.class;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("In The Depths.mp3");
 
     
     

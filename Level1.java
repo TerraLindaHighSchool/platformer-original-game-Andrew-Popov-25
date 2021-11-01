@@ -75,12 +75,6 @@ public class Level1 extends World
         addObject(bomb,698,765);
         Bomb bomb2 = new Bomb(GRAVITY);
         addObject(bomb2,390,182);
-        Powerup powerup = new Powerup();
-        addObject(powerup,936,180);
-        Powerup powerup2 = new Powerup();
-        addObject(powerup2,1012,180);
-        Powerup powerup3 = new Powerup();
-        addObject(powerup3,975,180);
         removeObject(brickWall);
         SmBrickWall smBrickWall4 = new SmBrickWall();
         addObject(smBrickWall4,1140,100);
@@ -92,15 +86,6 @@ public class Level1 extends World
         removeObject(brickWall5);
         BrickWall brickWall6 = new BrickWall();
         addObject(brickWall6,1195,99);
-        removeObject(powerup);
-        removeObject(powerup3);
-        Powerup powerup4 = new Powerup();
-        addObject(powerup4,1178,607);
-        Powerup powerup5 = new Powerup();
-        addObject(powerup5,308,187);
-        removeObject(powerup5);
-        Powerup powerup6 = new Powerup();
-        addObject(powerup6,305,189);
     }
     
     private void spawn()

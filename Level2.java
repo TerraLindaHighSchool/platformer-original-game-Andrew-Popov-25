@@ -77,6 +77,9 @@ public class Level2 extends World
         addObject(smBrickWall5,604,204);
         SmBrickWall2 smBrickWall6 = new SmBrickWall2();
         addObject(smBrickWall6,1142,98);
+        removeObject(powerup2);
+        removeObject(powerup3);
+        removeObject(powerup);
     }
     
     private void spawn()

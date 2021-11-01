@@ -14,7 +14,7 @@ public class Level3 extends World
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
     private final Class NEXT_LEVEL = Level4.class;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("Wind Chimes.mp3");
 
     
     
@@ -83,6 +83,9 @@ public class Level3 extends World
         addObject(bomb3,487,108);
         SmBrickWall3 smBrickWall10 = new SmBrickWall3();
         addObject(smBrickWall10,820,81);
+        removeObject(powerup2);
+        removeObject(powerup);
+        removeObject(powerup3);
     }
     
     private void spawn()
